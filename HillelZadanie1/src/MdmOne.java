@@ -2,15 +2,14 @@ public class MdmOne {
 
     public static void main(String[] args) {
 
-        Student myStudent = new Student();
-        myStudent.name = "Dumanskyi";
-        myStudent.group = "QA";
-        myStudent.course = 1;
+        eat("Vasya", "fish" );
+        eat("Masya", "sausage" );
+        eat("British", "chiken" );
 
+    }
+        static void eat(String name, String food) {
+            System.out.println("I'm " + name + ", I eat " + food);
+        }
 
-        System.out.println("Name: " + myStudent.name);
-        System.out.println("Group: " + myStudent.group);
-        System.out.println("Course: " + myStudent.course);
     }
 
-}
