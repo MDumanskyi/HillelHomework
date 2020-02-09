@@ -11,7 +11,6 @@ import org.testng.annotations.Test;
 
 public class DragDrop {
     private String url;
-    private String urlBoard;
     private WebDriver driver;
     private String username;
     private String password;
@@ -19,7 +18,6 @@ public class DragDrop {
     @BeforeClass
     public void beforeMethod(){
         url = "https://jira.hillel.it/";
-        urlBoard = "https://jira.hillel.it/secure/RapidBoard.jspa?rapidView=636&useStoredSettings=true";
         username = "";
         password = "";
         driver = new ChromeDriver();
@@ -31,8 +29,8 @@ public class DragDrop {
         driver.findElement(By.cssSelector("div.field-group input#login-form-password")).sendKeys(password);
         driver.findElement(By.cssSelector("div.buttons input#login")).click();
         Thread.sleep(5000);
-//        driver.findElement(By.cssSelector("div.aui-header-primary ul.aui-nav #greenhopper_menu")).click();
-        driver.get(urlBoard);
+        driver.findElement(By.cssSelector("div.aui-header-primary ul.aui-nav #greenhopper_menu")).click();
+        driver.findElement(By.cssSelector("a#rapidb_lnk_636_lnk")).click();
         Thread.sleep(5000);
         WebElement From = driver.findElement (By.cssSelector("ul.ghx-columns li:nth-child(1) > div:nth-child(1)"));
         WebElement To = driver.findElement (By.cssSelector("ul.ghx-columns li:nth-child(2)"));
